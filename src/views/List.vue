@@ -1,7 +1,7 @@
 <template>
   <v-container>
     <h1 class="text-center">クイズ一覧</h1>
-    <h2 class="text-center">新着</h2>
+    <h2 class="text-center">カテゴリー名</h2>
     <v-row>
       <v-col
         v-for="(item, i) in items"
@@ -31,23 +31,14 @@
         </v-card>
       </v-col>
 
-      <v-col cols="12">
-        <h1 class="text-center">カテゴリー</h1>
-      </v-col>
-      <v-row>
-        <v-col v-for="(item, i) in 8" cols="3" :key="i">
-          <v-card>
-            <v-img
-              src="../assets/logo.png"
-              class="white--text align-end"
-              gradient="to bottom, rgba(0,0,0,.1), rgba(0,0,0,.5)"
-              height="200px"
-            >
-            </v-img>
-            <v-card-title>カテゴリー名</v-card-title>
-          </v-card>
-        </v-col>
-      </v-row>
+    <v-col>
+      <div class="text-center">
+        <v-pagination
+          v-model="page"
+          :length="6"
+        ></v-pagination>
+      </div>
+    </v-col>
     </v-row>
   </v-container>
 </template>
@@ -64,10 +55,35 @@ export default defineComponent({
   components: {
   },
   data: () => ({
+    page: 1,
     items: [
       {
         color: '#FFF',
         src: '../assets/logo.png',
+        title: 'クイズタイトル',
+        description: 'Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.'
+      },
+      {
+        color: '#FFF',
+        src: 'https://cdn.vuetifyjs.com/images/cards/halcyon.png',
+        title: 'クイズタイトル',
+        description: 'Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.'
+      },
+      {
+        color: '#FFF',
+        src: 'https://cdn.vuetifyjs.com/images/cards/halcyon.png',
+        title: 'クイズタイトル',
+        description: 'Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.'
+      },
+      {
+        color: '#FFF',
+        src: 'https://cdn.vuetifyjs.com/images/cards/halcyon.png',
+        title: 'クイズタイトル',
+        description: 'Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.'
+      },
+      {
+        color: '#FFF',
+        src: 'https://cdn.vuetifyjs.com/images/cards/halcyon.png',
         title: 'クイズタイトル',
         description: 'Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.'
       },
