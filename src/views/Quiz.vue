@@ -9,31 +9,76 @@
       <div id="answers">
         <v-row>
           <v-col cols="6">
-            <v-btn x-large block dark color="blue">A. 富士山</v-btn>
+            <v-btn x-large block dark color="primary" flat >A. 富士山</v-btn>
           </v-col>
           <v-col cols="6">
-            <v-btn x-large block dark outlinedcolor="blue">B. 六甲山</v-btn>
+            <v-btn x-large block dark color="primary" variant="outlined">B. 六甲山</v-btn>
           </v-col>
         </v-row>
 
         <v-row>
           <v-col cols="6">
-            <v-btn x-large block dark outlinedcolor="blue">C. 阿蘇山</v-btn>
+            <v-btn x-large block dark color="primary" variant="outlined">C. 阿蘇山</v-btn>
           </v-col>
           <v-col cols="6">
-            <v-btn x-large block dark outlinedcolor="blue">D. 函館山</v-btn>
+            <v-btn x-large block dark color="primary" variant="outlined">D. 函館山</v-btn>
           </v-col>
         </v-row>
       </div>
 
       <div class="answer-btn">
-        <v-btn depressed x-large block color="primary">回答する</v-btn>
+        <v-btn depressed x-large block color="primary" flat v-on="on" @click.stop="dialog = true">回答する</v-btn>
       </div>
+
+      <v-dialog v-model="dialog" persistent max-width="600">
+        <div class="py-8 white">
+          <div v-if="false" class="text-center blue--text judge-text">〇正解！</div>
+          <div v-else class="text-center red--text judge-text">×不正解！</div>
+
+          <div class="text-center font-weight-bold answer-text">正解は「A. 富士山」</div>
+          <div class="py-3 px-6">説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明。</div>
+          <div class="text-center mb-2">
+            <v-btn color="primary" flat v-on="on" @click.stop="dialog = false">次の問題</v-btn>
+          </div>
+          <div class="text-center">
+            <v-btn variant="text" v-on="on" @click.stop="dialog = false">やめる</v-btn>
+          </div>
+        </div>
+      </v-dialog>
     </div>
   </v-container>
 </template>
 
+<script>
+export default {
+  data () {
+    return {
+      dialog: false
+    }
+  }
+}
+</script>
+
 <style>
+  .white {
+    background: white;
+  }
+
+  .blue--text {
+    color: rgb(9, 122, 214)
+  }
+
+  .red--text {
+    color: rgb(227, 80, 12)
+  }
+
+  .judge-text {
+    font-size: 40px;
+  }
+
+  .answer-text {
+    font-size: 22px;
+  }
   #answers {
    margin-top: 10px;
   }
