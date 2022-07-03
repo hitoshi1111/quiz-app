@@ -7,23 +7,25 @@
 
       <!-- 4択 -->
       <div id="answers">
-        <v-row>
-          <v-col cols="6">
-            <v-btn x-large block dark color="primary" flat >A. 富士山</v-btn>
-          </v-col>
-          <v-col cols="6">
-            <v-btn x-large block dark color="primary" variant="outlined">B. 六甲山</v-btn>
-          </v-col>
-        </v-row>
+        <div class="selection-btn">
+          <v-btn block dark color="primary" flat>C. 富士山</v-btn>
+        </div>
 
-        <v-row>
-          <v-col cols="6">
-            <v-btn x-large block dark color="primary" variant="outlined">C. 阿蘇山</v-btn>
-          </v-col>
-          <v-col cols="6">
-            <v-btn x-large block dark color="primary" variant="outlined">D. 函館山</v-btn>
-          </v-col>
-        </v-row>
+        <div class="selection-btn">
+          <v-btn block dark color="primary" variant="outlined">C. 六甲山</v-btn>
+        </div>
+
+        <div class="selection-btn">
+          <v-btn block dark color="primary" variant="outlined">C. 阿蘇山</v-btn>
+        </div>
+
+        <div class="selection-btn">
+          <v-btn block dark color="primary" variant="outlined">D. 函館山</v-btn>
+        </div>
+
+        <div class="selection-btn">
+          <v-btn block dark color="primary" variant="outlined">E. E山</v-btn>
+        </div>
       </div>
 
       <div class="answer-btn">
@@ -79,8 +81,13 @@ export default {
   .answer-text {
     font-size: 22px;
   }
+
   #answers {
    margin-top: 10px;
+  }
+
+  .selection-btn {
+    margin-top: 14px;
   }
 
   .answer-btn {
